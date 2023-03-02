@@ -11,6 +11,19 @@
   <script defer src="./script.js"></script>
 </head>
 <body>
-  <div id="app"></div>  
+  <div id="app">
+    <h1>{{ greeting }}</h1>
+    <p>Is it true?</p>
+    <p>{{ isItTrue ? "Yea it is!" : "Actually no."}}</p>
+    <br>
+    <p>Who made the course that you are watching?</p>
+    <p>- {{ names[0] }}</p>
+
+    <p>Tell me a car that you like.</p>
+    <p>- {{ car.brand }} {{ car.model }}</p>
+
+    <p>Is {{ number }} devisable by 3?</p>
+    <p>- {{ isDevisableByThree(number) ? "Yes" : "No" }}</p>
+  </div>  
 </body>
 </html>

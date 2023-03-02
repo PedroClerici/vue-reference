@@ -1,19 +1,15 @@
-const dayOfTheWeek = new Date().toLocaleDateString("en-US", { weekday: 'long'})
-
 const App = {
   data() {
     return {
-      greeting: `Hello, today is ${dayOfTheWeek}.`,
-      isItTrue: true,
+      user: "Mario",
+      userAge: 18,
+      allowedAge: 18,
       names: ["Francis", "Maria", "Steve", "Scott"],
-      car: {
-        brand: "Honda",
-        model: "Civic",
-      },
-      number: 15,
-      isDevisableByThree(number) {
-        return number % 3 == 0
-      },
+    }
+  },
+  methods: {
+    checkUser() {
+      return this.names.includes(this.user)
     }
   }
 }

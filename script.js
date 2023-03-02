@@ -4,17 +4,22 @@ const App = {
   data() {
     return {
       greeting: `Hello, today is ${dayOfTheWeek}.`,
-      isItTrue: true,
       names: ["Francis", "Maria", "Steve", "Scott"],
-      car: {
-        brand: "Honda",
-        model: "Civic",
-      },
-      number: 15,
-      isDevisableByThree(number) {
-        return number % 3 == 0
-      },
+      number: 22,
     }
+  },
+  methods: {
+    welcome() {
+      return this.greeting
+    },
+    getRandomName() {
+      return this.names[
+        Math.floor(Math.random() * this.names.length)
+      ]
+    },
+    isDevisableByThree(number) {
+      return number % 3 == 0
+    },
   }
 }
 

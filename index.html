@@ -12,18 +12,11 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ greeting }}</h1>
-    <p>Is it true?</p>
-    <p>{{ isItTrue ? "Yea it is!" : "Actually no."}}</p>
-    <br>
-    <p>Who made the course that you are watching?</p>
-    <p>- {{ names[0] }}</p>
+    <h1 v-once>{{ name }}</h1>
+    <h1>{{ name }}</h1>
 
-    <p>Tell me a car that you like.</p>
-    <p>- {{ car.brand }} {{ car.model }}</p>
+    {{ update() }}
 
-    <p>Is {{ number }} devisable by 3?</p>
-    <p>- {{ isDevisableByThree(number) ? "Yes" : "No" }}</p>
   </div>  
 </body>
 </html>

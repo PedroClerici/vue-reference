@@ -12,18 +12,18 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ greeting }}</h1>
-    <p>Is it true?</p>
-    <p>{{ isItTrue ? "Yea it is!" : "Actually no."}}</p>
-    <br>
-    <p>Who made the course that you are watching?</p>
-    <p>- {{ names[0] }}</p>
-
-    <p>Tell me a car that you like.</p>
-    <p>- {{ car.brand }} {{ car.model }}</p>
-
-    <p>Is {{ number }} devisable by 3?</p>
-    <p>- {{ isDevisableByThree(number) ? "Yes" : "No" }}</p>
+    <h1>{{ name }}</h1>
+    <button @click="changeName">Click me!</button>
+    <div class="box" @mousemove="getCoordinates">X: {{ x }} - Y: {{ y }}</div>
   </div>  
+
+  <style>
+    .box {
+      background: lightcoral;
+      width: 200px;
+      height: 200px;
+      margin-top: 1em;
+    }
+  </style>
 </body>
 </html>

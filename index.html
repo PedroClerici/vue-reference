@@ -12,19 +12,22 @@
 </head>
 <body>
   <div id="app">
-    <h1>Hello, {{ user.name }} {{ user.lastname }}</h1>
-    <ul>
-      <li v-for="(value, key, index) in user">
-        {{ index }} - {{ key }} = {{ value }}
-      </li>
-    </ul>
-    <p v-for="name in names">
-      {{ name }}
-    </p>
-    <ul>
-      <li v-for="(car, index) in cars">
-        {{ index }} - {{ car.brand }} {{ car.model }}
-      </li>
-    </ul>
+    <form @submit.prevent="formHandler">
+      <label for="name">Name</label><br>
+      <input type="text" id="name" name="name" v-model.trim="formData.name">
+      <br>
+      <label for="lastName">Last Name</label><br>
+      <input type="text" id="name" name="lastName" v-model.capitalize="formData.lastName">
+      <br>
+      <label for="age">Age</label><br>
+      <input type="text" id="age" name="age" v-model.number="formData.age">
+      <br>
+      <label for="password">Password</label><br>
+      <input type="password" id="password" name="password" v-model="formData.password">
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
 </body>
 </html>

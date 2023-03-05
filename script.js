@@ -1,29 +1,23 @@
 const App = {
   data() {
     return {
-      user: {
-        name: "John",
-        lastname: "Doe",
-        age: "24",
-      },
-      names: ["Francis", "Maria", "Steve", "Scott"],
-      cars: [
-        {
-          brand: "Ford",
-          model: "Ranger",
-          color: "Blue"
-        },
-        {
-          brand: "Honda",
-          model: "Civic",
-          color: "Silver"
-        },
-        {
-          brand: "Fiat",
-          model: "Toro",
-          color: "Red"
-        },
-      ]
+      formData: {
+        name: '',
+        lastName: '',
+        age: 0,
+        password: '',
+      }
+    }
+  },
+  methods: {
+    formHandler() {
+      console.log(typeof(this.formData.age))
+      console.log(`
+        Name: ${this.formData.name}
+        Last Name: ${this.formData.lastName}
+        Age: ${this.formData.age}
+        Password: ${this.formData.password}
+      `)
     }
   }
 }

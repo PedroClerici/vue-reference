@@ -1,19 +1,14 @@
 const App = {
   data() {
     return {
-      name: "Scott",
-      x: 0,
-      y: 0,
+      name: "",
     }
   },
   methods: {
-    changeName() {
-      this.name === "Mario" ? this.name = "Scott" : this.name = "Mario"
-    },
-    getCoordinates(event) {
-      this.x = event.offsetX
-      this.y = event.offsetY
-    },
+    handleSubmit(e) {
+      this.name = e.target.value
+      alert(this.name)
+    }
   }
 }
 

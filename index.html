@@ -12,18 +12,15 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ name }}</h1>
-    <button @click="changeName">Click me!</button>
-    <div class="box" @mousemove="getCoordinates">X: {{ x }} - Y: {{ y }}</div>
+    <label for="name">Name</label>
+    <br>
+    <input 
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Please enter your name"
+      @keydown.enter.tab="handleSubmit"
+      >
   </div>  
-
-  <style>
-    .box {
-      background: lightcoral;
-      width: 200px;
-      height: 200px;
-      margin-top: 1em;
-    }
-  </style>
 </body>
 </html>

@@ -7,7 +7,7 @@ const App = {
   },
   watch: {
     check() {
-      console.log("Active changed!!!")
+      alert("check changed!!!")
     },
   },
   computed: {
@@ -21,17 +21,9 @@ const App = {
     },
   },
   methods: {
-    checkUser() {
-      console.log("checkUser called!")
-      return this.user === "Scott" ? "Welcome" : "Not allowed"
-    },
     toggleActive() {
       this.check = !this.check
     },
-    isActive() {
-      console.log("isActive called!")
-      return this.check ? "Checked" : "Not checked"
-    }
   }
 }
 

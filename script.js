@@ -1,19 +1,27 @@
-const dayOfTheWeek = new Date().toLocaleDateString("en-US", { weekday: 'long'})
-
 const App = {
   data() {
     return {
-      greeting: `Hello, today is ${dayOfTheWeek}.`,
-      isItTrue: true,
-      names: ["Francis", "Maria", "Steve", "Scott"],
-      car: {
-        brand: "Honda",
-        model: "Civic",
-      },
-      number: 15,
-      isDevisableByThree(number) {
-        return number % 3 == 0
-      },
+      user: "",
+      check: false,
+    }
+  },
+  computed: {
+    computedCheckUser() {
+      console.log("computedCheckUser called!")
+      return this.user === "Scott" ? "Welcome" : "Not allowed"
+    }
+  },
+  methods: {
+    checkUser() {
+      console.log("checkUser called!")
+      return this.user === "Scott" ? "Welcome" : "Not allowed"
+    },
+    handleCheck() {
+      this.check = !this.check
+    },
+    isChecked() {
+      console.log("isChecked called!")
+      return this.check ? "Checked" : "Not checked"
     }
   }
 }

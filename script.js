@@ -1,21 +1,44 @@
-const dayOfTheWeek = new Date().toLocaleDateString("en-US", { weekday: 'long'})
 
-const App = {
+const app = Vue.createApp({})
+
+app.component("app-header", {
   data() {
     return {
-      greeting: `Hello, today is ${dayOfTheWeek}.`,
-      isItTrue: true,
-      names: ["Francis", "Maria", "Steve", "Scott"],
-      car: {
-        brand: "Honda",
-        model: "Civic",
-      },
-      number: 15,
-      isDevisableByThree(number) {
-        return number % 3 == 0
-      },
+      title: "Simple app"
     }
-  }
-}
+  },
+  template: `
+    <header>{{ title }}</header>
+  `
+})
 
-Vue.createApp(App).mount("#app")
+app.component("greeting", {
+  data() {
+    return {
+      name: "Scott"
+    }
+  },
+  methods: {
+    changeName() {
+      this.name = "Mario"
+    }
+  },
+  template: `
+    <h1 @click="changeName">Hello, my name is {{ name }}.</h1>
+  `
+})
+
+app.component("app-footer", {
+  data() {
+    return {
+      copyright: "@copyright 2023"
+    }
+  },
+  template: `
+    <header>{{ copyright }}</header>
+  `
+})
+
+setTimeout(() => {
+  app.mount("#app");
+}, 1000)

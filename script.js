@@ -1,21 +1,27 @@
-const dayOfTheWeek = new Date().toLocaleDateString("en-US", { weekday: 'long'})
+const greeting = "Hello, user!"
 
-const App = {
+const app1 = Vue.createApp({
   data() {
     return {
-      greeting: `Hello, today is ${dayOfTheWeek}.`,
-      isItTrue: true,
-      names: ["Francis", "Maria", "Steve", "Scott"],
-      car: {
-        brand: "Honda",
-        model: "Civic",
-      },
-      number: 15,
-      isDevisableByThree(number) {
-        return number % 3 == 0
-      },
+        message: "Instance one working",
+    }
+  },
+  methods: {
+    changeMessage() {
+      app2.message = "Hello, world!"
     }
   }
-}
+}).mount("#app")
 
-Vue.createApp(App).mount("#app")
+const app2 = Vue.createApp({
+  data() {
+    return {
+      message: "Instance two working"
+    }
+  },
+  methods: {
+    sayHello() {
+      alert(greeting)
+    }
+  }
+}).mount("#app2")

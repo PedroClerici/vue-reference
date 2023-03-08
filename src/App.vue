@@ -1,5 +1,5 @@
 <script>
-  // Importing component locally
+  // Importing component locall y
   import AppHeader from '@components/AppHeader.vue'
 
   export default {
@@ -16,7 +16,21 @@
 </script>
 
 <template>
-  <AppHeader/>
-    <h1>Hello, {{ message }}!</h1>
-  <AppFooter/>
+    <AppHeader/>
+    <div class="container">
+        <h1>Hello, {{ message }}!</h1>
+    </div>
+    <AppFooter/>
 </template>
+
+<style>
+  /* Global styles */
+  * {
+    font-family: monospace;
+  }
+
+  body, html {
+    padding: 0;
+    margin: 0;
+  }
+</style>

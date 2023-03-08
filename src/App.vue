@@ -1,5 +1,5 @@
 <script>
-  // Importing component locall y
+  // Importing component locally
   import AppHeader from '@components/AppHeader.vue'
 
   export default {

@@ -1,16 +1,22 @@
 <script>
-  // Importing component locally
-  import AppHeader from '@components/AppHeader.vue'
+  import AppHeader from "@components/AppHeader.vue";
+  import UserProfile from "@components/user/UserProfile.vue";
 
   export default {
     name: 'App',
     data() {
       return {
-        message: "world",
+        name: "Scott",
+        age: 26,
+        parents: {
+          mother: "Stephanie",
+          father: "Mario",
+        }
       }
     },
     components: {
-      AppHeader
+      AppHeader,
+      UserProfile
     }
   }
 </script>
@@ -18,13 +24,18 @@
 <template>
     <AppHeader/>
     <div class="container">
-        <h1>Hello, {{ message }}!</h1>
+        <h1>Hello, {{ name }}!</h1>
     </div>
+    <UserProfile 
+      :name="name" 
+      lastName="Brown" 
+      :age="age"
+      :parents="parents"
+    />
     <AppFooter/>
 </template>
 
 <style>
-  /* Global styles */
   * {
     font-family: monospace;
   }

@@ -9,7 +9,6 @@
 </template>
 
 <style scoped>
-  /* Scoped styles */
   div {
     background-color: lightcoral;
     padding: 1rem;

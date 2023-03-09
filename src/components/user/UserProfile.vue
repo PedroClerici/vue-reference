@@ -1,12 +1,21 @@
 <script>
   export default {
-    // Using prop types:
     props: {
       name: String,
       lastName: String, 
       age: Number,
-      parents: Object
+      parents: Object,
+      updateAge: Function,
     },
+    methods: {
+      // This methods emits a custom event
+      updateName() {
+        this.$emit("updateName", "Michelson");
+      },
+      alertName() {
+        this.$emit("alertName");
+      }
+    }
   }
 </script>
 
@@ -21,6 +30,10 @@
         <li><strong>Mother:</strong> {{ parents.mother }}</li>
       </ul>
     </ul>
+    <!-- Emitting custom events -->
+    <button @click="updateName">Update Parent Component</button>
+    <button @click="alertName">Alert User Name From Child</button>
+    <button @click="updateAge(40)">Update User Age From Child</button>
   </div>
 </template>
 

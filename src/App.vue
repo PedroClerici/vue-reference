@@ -17,6 +17,14 @@
     components: {
       AppHeader,
       UserProfile
+    },
+    methods: {
+      alertUserName() {
+        alert(`The user's name is ${this.name}.`);
+      },
+      updateAge(age) {
+        this.age = age;
+      }
     }
   }
 </script>
@@ -31,6 +39,9 @@
       lastName="Brown" 
       :age="age"
       :parents="parents"
+      @updateName="name = $event"
+      @alertName="alertUserName"
+      :updateAge="updateAge"
     />
     <AppFooter/>
 </template>

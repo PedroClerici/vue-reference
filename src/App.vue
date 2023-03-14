@@ -7,7 +7,7 @@
     data() {
       return {
         name: "Scott",
-        age: 26,
+        age: "26",
         parents: {
           mother: "Stephanie",
           father: "Mario",

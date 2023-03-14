@@ -1,11 +1,29 @@
 <script>
   export default {
     props: {
-      name: String,
+      name: {
+        type: String,
+        // Custom validation
+        validator(value) {
+          return value === "Scott" ? true : false
+        },
+      },
       lastName: String, 
-      age: Number,
+      age: {
+        // More props validation
+        type: [Number, String],
+        required: true,
+        default: "N/A",
+      },
       parents: Object,
       updateAge: Function,
+    },
+    // Emits validation
+    emits: {
+      // "alertName",
+      "updateName": (name) => {
+        return name === "Michelson" ? true : false
+      },
     },
     methods: {
       // This methods emits a custom event

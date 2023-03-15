@@ -1,32 +1,43 @@
 <script>
-  // Importing component locally
-  import AppHeader from '@components/AppHeader.vue'
+  import AppHeader from '@components/AppHeader.vue';
+  import Brand from '@components/Brand.vue';
 
   export default {
     name: 'App',
     data() {
       return {
-        message: "world",
+        brands: [
+          "Mazda",
+          "Honda",
+          "Ford",
+          "Renault",
+        ]
       }
     },
     components: {
-      AppHeader
+      AppHeader,
+      Brand,
     }
   }
 </script>
 
 <template>
-    <AppHeader/>
+    <AppHeader />
     <div class="container">
-        <h1>Hello, {{ message }}!</h1>
+      <Brand>
+        <ul>
+          <li v-for="(brand, index) in brands">{{ index + 1 }} - {{ brand }}</li>
+        </ul>
+      </Brand>
     </div>
-    <AppFooter/>
+    <AppFooter />
 </template>
 
 <style>
   /* Global styles */
   * {
     font-family: monospace;
+    font-size: 1rem;
   }
 
   body, html {

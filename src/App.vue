@@ -1,24 +1,24 @@
 <script>
-import LifeCycles from './components/LifeCycles.vue'
+import PlayerMike from '@/components/Players/PlayerMike.vue';
+import PlayerSteve from '@/components/Players/PlayerSteve.vue';
 
 export default {
   name: 'App',
   components: {
-    LifeCycles,
+    PlayerMike,
+    PlayerSteve,
   },
   data() {
     return {
-      message: "world",
-      showLifeCycles: true,
+      activePlayer: 'PlayerMike',
     }
   },
-  mounted() {
-    setInterval(() => {
-      this.showLifeCycles = false;
-    }, 3000);
-  },
-  unmounted() {
-    console.log("App.vue component has ben unmounted!");
+  methods: {
+    togglePlayer() {
+      this.activePlayer === 'PlayerMike' ?
+      this.activePlayer = 'PlayerSteve' :
+      this.activePlayer = 'PlayerMike'
+    }
   }
 }
 </script>
@@ -26,10 +26,10 @@ export default {
 <template>
     <TheHeader/>
     <div class="container">
-      <h1>Hello, {{ message }}!</h1>
+      <component :is="activePlayer" />
+      <button @click="togglePlayer()">Toggle Active Player</button>
     </div>
-    <LifeCycles :show="showLifeCycles"/>
-    <TheFooter/>
+    <TheFooter />
 </template>
 
 <style>

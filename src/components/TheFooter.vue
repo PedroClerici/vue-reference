@@ -1,17 +1,17 @@
 <script>
   export default {
-    name: "AppHeader"
+    name: "TheFooter"
   }
 </script>
 
 <template>
-  <div>AppHeader.vue</div>
+  <div>AppFooter.vue</div>
 </template>
 
 <style scoped>
   /* Scoped styles */
   div {
-    background-color: lightcoral;
+    background-color: lightgreen;
     padding: 1rem;
   }
 </style>

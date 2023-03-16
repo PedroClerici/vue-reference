@@ -1,32 +1,42 @@
 <script>
-  // Importing component locally
-  import AppHeader from '@components/AppHeader.vue'
+import LifeCycles from './components/LifeCycles.vue'
 
-  export default {
-    name: 'App',
-    data() {
-      return {
-        message: "world",
-      }
-    },
-    components: {
-      AppHeader
+export default {
+  name: 'App',
+  components: {
+    LifeCycles,
+  },
+  data() {
+    return {
+      message: "world",
+      showLifeCycles: true,
     }
+  },
+  mounted() {
+    setInterval(() => {
+      this.showLifeCycles = false;
+    }, 3000);
+  },
+  unmounted() {
+    console.log("App.vue component has ben unmounted!");
   }
+}
 </script>
 
 <template>
-    <AppHeader/>
+    <TheHeader/>
     <div class="container">
-        <h1>Hello, {{ message }}!</h1>
+      <h1>Hello, {{ message }}!</h1>
     </div>
-    <AppFooter/>
+    <LifeCycles :show="showLifeCycles"/>
+    <TheFooter/>
 </template>
 
 <style>
   /* Global styles */
   * {
     font-family: monospace;
+    font-size: 1.2rem;
   }
 
   body, html {

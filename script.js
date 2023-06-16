@@ -3,17 +3,19 @@ const dayOfTheWeek = new Date().toLocaleDateString("en-US", { weekday: 'long'})
 const App = {
   data() {
     return {
-      greeting: `Hello, today is ${dayOfTheWeek}.`,
-      isItTrue: true,
-      names: ["Francis", "Maria", "Steve", "Scott"],
-      car: {
-        brand: "Honda",
-        model: "Civic",
+      image: {
+        src: "https://picsum.photos/200/300",
+        alt: "A random image"
       },
-      number: 15,
-      isDevisableByThree(number) {
-        return number % 3 == 0
-      },
+      link: "https://google.com",
+      html: `
+        <ul>
+          <li>This</li>
+          <li>is a</li>
+          <li>is</li>
+          <li>list!</li>
+        </ul>
+      `
     }
   }
 }
